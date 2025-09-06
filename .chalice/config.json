@@ -7,7 +7,9 @@
       "environment_variables": {
         "PRODUCTOS_TABLE": "productos-api-dev"
       },
-      "automatic_layer": true
+      "automatic_layer": true,
+      "manage_iam_role": false,
+      "iam_role_arn": "arn:aws:iam::501635705879:role/LabRole"
     }
   }
 }
