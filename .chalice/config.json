@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "app_name": "productos-api",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "PRODUCTOS_TABLE": "productos-api-dev"
+      },
+      "automatic_layer": true
+    }
+  }
+}

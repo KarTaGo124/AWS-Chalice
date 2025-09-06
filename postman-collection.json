@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "12345678-1234-1234-1234-123456789012",
+		"name": "Chalice API CRUD - Productos",
+		"description": "Colección para probar la API REST de productos desarrollada con AWS Chalice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Home - Información de la API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Listar todos los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/productos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Obtener producto por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/productos/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Crear nuevo producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tablet\",\n    \"precio\": 299.99,\n    \"categoria\": \"Tecnología\",\n    \"stock\": 15\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/productos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Actualizar producto existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Laptop Gaming\",\n    \"precio\": 1599.99,\n    \"categoria\": \"Tecnología\",\n    \"stock\": 8\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/productos/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Eliminar producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/productos/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Filtrar productos por categoría",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/productos/categoria/Tecnología",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"categoria",
+						"Tecnología"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Actualizar stock de producto",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stock\": 25\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/productos/1/stock",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"1",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Error - Producto no encontrado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/productos/999",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos",
+						"999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Error - Crear producto sin datos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "{{base_url}}/productos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
